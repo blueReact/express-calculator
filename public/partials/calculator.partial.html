@@ -1,0 +1,53 @@
+<div class="calculator-block col-md-6 col-md-offset-3">
+  <h1>Calculator</h1>
+  <form name="calculatorForm" novalidate>
+
+    <div class="form-group">
+      <label for="value">Enter the first number:</label>
+      <input type="number" class="form-control" name="value" ng-model="vm.value" required>
+      <span ng-show="calculatorForm.value.$dirty && calculatorForm.value.$invalid">
+        <span ng-show="calculatorForm.value.$error.required">Field is required.</span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="value1">Enter the second number:</label>
+      <input type="number" class="form-control" name="value1" ng-model="vm.value1" required>
+      <span ng-show="calculatorForm.value1.$dirty && calculatorForm.value1.$invalid">
+        <span ng-show="calculatorForm.value1.$error.required">Field is required.</span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="sel1">Select operation:</label>
+      <select class="form-control" name="operator" ng-model="vm.operator">
+        <option value="+">addition</option>
+        <option value="-">substraction</option>
+        <option value="*">multiply</option>
+        <option value="/">division</option>
+      </select>
+      <span ng-show="calculatorForm.operator.$dirty && calculatorForm.operator.$invalid">
+        <span ng-show="calculatorForm.operator.$error.required">Operator is required.</span>
+      </span>
+    </div>
+
+    <button type="button" class="btn btn-default" ng-click="vm.submit()" ng-disabled="(calculatorForm.value.$dirty && calculatorForm.value.$invalid || calculatorForm.value.$pristine)
+    || (calculatorForm.value1.$dirty && calculatorForm.value1.$invalid || calculatorForm.value1.$pristine)
+    || (calculatorForm.operator.$dirty && calculatorForm.operator.$invalid || calculatorForm.operator.$pristine)
+">Submit</button>
+
+    <!-- error block -->
+    <div class="alert alert-danger fixed bottom-right" role="alert" ng-show="vm.error" ng-hide="vm.response">
+      Error!
+    </div>
+    <!-- ./error block -->
+
+    <!-- error block -->
+    <div class="alert alert-success fixed bottom-right" role="alert" ng-show="vm.response" ng-hide="vm.error">
+      Success! The final result is: {{vm.response.result}}
+    </div>
+    <!-- ./error block -->
+
+
+  </form>
+</div>

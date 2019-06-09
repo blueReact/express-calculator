@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+
+  <!-- title tag -->
+  <title>Calculator</title>
+  <base href="/">
+
+  <!-- meta tags -->
+  <meta name="fragment" content="!" />
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <meta name="keywords" content="Calculator">
+  <meta name="description" content="Calculator based on REST API">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="images/node.ico" type="images/x-icon" />
+  <link rel="icon" href="images/node.ico" type="images/x-icon" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icon.png" />
+
+  <!-- meta tags -->
+  <meta name="author" content="roycodeman@gmail.com" />
+  <!--//	META DETAILS  //   
+    This website was built by roycodeman. Visit me today at https://www.linkedin.com/in/roycodeman/
+  -->
+  <meta name="msapplication-TileColor" content="#e1eaf4" />
+  <meta name="theme-color" content="#e1eaf4" />
+
+  <!-- stylesheets -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- custom -->
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <style>
+    /* gives the class early */
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak,
+    .ng-hide {
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body ng-app="myApp" ng-strict-di>
+
+  <div ng-cloak ng-controller="mainController as vm">
+
+    <div ng-view class="container-fluid"></div>
+
+  </div>
+
+  <!-- library scripts -->
+  <!-- angularjs library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.7.0/angular-route.min.js"></script>
+
+  <!-- custom scripts -->
+  <script src="scripts/module.js"></script>
+  <script src="scripts/controller.js"></script>
+  <script src="scripts/router.js"></script>
+
+</body>
