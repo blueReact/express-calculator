@@ -89,8 +89,6 @@ app.post('/cal', [
       break;
   }
 
-
-  console.log(result)
   res.status(200).json({
     'result': result
   });
@@ -102,8 +100,6 @@ app.use(function (err, req, res, next) {
   var err = new Error(err);
   err.code = err.status || 500;
 
-  // var err = new Error(err);
-  // err.code = err.status || 500;  
   return res.status(err.code).json({
     message: err.message
   });
