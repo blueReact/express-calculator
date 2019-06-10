@@ -9,13 +9,11 @@ var compression = require('compression')
 const bodyParser = require('body-parser');
 const app = express();
 
-
+app.use(compression());
 app.use(bodyParser.json());
 
 // serving static assets
 app.use(express.static(path.join(__dirname, "public")));
-
-app.use(compression())
 
 app.post('/cal', [
 
