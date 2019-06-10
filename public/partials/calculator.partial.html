@@ -19,12 +19,9 @@
     </div>
 
     <div class="form-group">
-      <label for="sel1">Select operation:</label>
+      <label for="operator">Select operation:</label>
       <select class="form-control" name="operator" ng-model="vm.operator">
-        <option value="+">addition</option>
-        <option value="-">substraction</option>
-        <option value="*">multiply</option>
-        <option value="/">division</option>
+        <option ng-repeat="operator in vm.operators" value="{{operator.value}}">{{operator.name}}</option>
       </select>
       <span ng-show="calculatorForm.operator.$dirty && calculatorForm.operator.$invalid">
         <span ng-show="calculatorForm.operator.$error.required">Operator is required.</span>
@@ -38,7 +35,7 @@
 
     <!-- error block -->
     <div class="alert alert-danger fixed bottom-right" role="alert" ng-show="vm.error" ng-hide="vm.response">
-      Error!
+      {{vm.error.statusText}} !!!
     </div>
     <!-- ./error block -->
 

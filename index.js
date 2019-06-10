@@ -84,9 +84,13 @@ app.post('/cal', [
 
       break;
     case '%':
-      var result = divide(x, y);
-
+      var result = modulo(x, y);
       break;
+
+    default:
+      var err = new Error();
+      return next(err);
+
   }
 
   res.status(200).json({
@@ -94,6 +98,7 @@ app.post('/cal', [
   });
 
 });
+
 
 app.use(function (err, req, res, next) {
 

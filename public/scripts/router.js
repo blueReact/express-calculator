@@ -3,9 +3,9 @@ angular
   .module('myApp')
   .config(config);
 
-config.$inject = ['$routeProvider', '$locationProvider'];
+config.$inject = ['$routeProvider'];
 
-function config($routeProvider, $locationProvider) {
+function config($routeProvider) {
 
   $routeProvider
     .when("/", {
@@ -13,16 +13,11 @@ function config($routeProvider, $locationProvider) {
       controller: 'mainController',
       controllerAs: 'vm'
     })
-    
+
     .otherwise({
       templateUrl: 'partials/404.partial.html',
       controller: 'mainController',
       controllerAs: 'vm'
     });
-
-
-
-  // // removes URL hash
-  // $locationProvider.html5Mode(true);
 
 }

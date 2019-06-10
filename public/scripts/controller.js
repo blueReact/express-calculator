@@ -14,6 +14,36 @@
     vm.response = true;
     vm.error = true;
 
+    vm.operators = [
+
+      {
+
+        "name": "Addition",
+        "value": "+"
+      },
+      {
+
+        "name": "Substraction",
+        "value": "-"
+      },
+      {
+
+        "name": "Multiply",
+        "value": "*"
+      },
+      {
+
+        "name": "Division",
+        "value": "/"
+      },
+      {
+
+        "name": "Modulo",
+        "value": "%"
+      }
+
+    ]
+
     vm.submit = function () {
 
       var data = {
@@ -33,6 +63,7 @@
           },
           function (error) {
             // failed
+            console.log(error);
             vm.error = error;
           })
 
