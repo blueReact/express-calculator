@@ -1,5 +1,5 @@
 # Calculator
-### Simple calculator built on MEAN stack
+### Simple calculator built on EAN stack
 
 Built a simple calculator using:
 
