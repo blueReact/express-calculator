@@ -31,7 +31,7 @@ app.post('/cal', [
 
 ], function (req, res, next) {
 
-  console.log(req.body);
+  // console.log(req.body);
 
   var errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -43,6 +43,7 @@ app.post('/cal', [
   var x = JSON.parse(req.body.value);
   var y = JSON.parse(req.body.value1);
   var sign = req.body.operator;
+  var result = 0;
 
   function plus(a, b) {
     return (a + b);
@@ -66,25 +67,20 @@ app.post('/cal', [
 
   switch (sign) {
     case '+':
-      var result = plus(x, y);
-
+      result = plus(x, y);
       break;
     case '-':
-      var result = minus(x, y);
-
+      result = minus(x, y);
       break;
     case '*':
-      var result = multiply(x, y);
-
+      result = multiply(x, y);
       break;
     case '/':
-      var result = divide(x, y);
-
+      result = divide(x, y);
       break;
     case '%':
-      var result = modulo(x, y);
+      result = modulo(x, y);
       break;
-
     default:
       var err = new Error();
       return next(err);
